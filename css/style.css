@@ -1,0 +1,89 @@
+    :root {
+        --color-primario: white;
+        --color-secundario: #f7a600;
+        --color-fondo: black;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: var(--color-fondo);
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    form {
+        background: var(--color-primario);
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 95%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid var(--color-secundario);
+        border-radius: 4px;
+    }
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+    .botones{
+        margin-bottom: 10px;
+    }
+    input[type="submit"] , a, input[type="reset"], input[type="reset"]{
+        background: var(--color-secundario);
+        color: var(--color-primario);
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    input[type="submit"]:hover, a:hover, input[type="reset"]:hover, input[type="reset"]:hover {
+        background: var(--color-primario);
+        color: var(--color-secundario);
+        transition: 0.5s;
+    }
+    .form-check{
+        display:flex;
+        justify-content: space-around;
+
+    }
+
+    section{
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #contactos{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    .texto{
+        color: white;
+        text-align: center;
+        display: flex;
+        width: 300%;
+        
+        justify-content: space-between;
+    }
+    p{
+        color: white;
+    }
+    .texto button{
+        background: red;
+        color: var(--color-primario);
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }

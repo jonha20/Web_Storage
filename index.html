@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Formulario</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Nombre:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Ingresa tu nombre"
+        required
+        maxlength="30"
+        minlength="3"
+      />
+      <br />
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Ingresa tu email"
+        required
+      />
+      <br />
+      <label for="message">Mensaje:</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Ingresa tu mensaje"
+        required
+      ></textarea>
+      <br />
+      <label for="url">URL Imagen:</label>
+      <textarea
+        id="url"
+        name="url"
+        placeholder="Introduce URL de una imagen"
+        required
+      ></textarea>
+        <input type="submit" value="Enviar" />
+        <input type="reset" value="Borrar todos" />
+      </section>
+      <article id="contact"></article>
+    </form>
+    <article id="contactos">
+      <div class="texto">
+        <p>${item}</p><button>Eliminar</button>
+    </div>
+    </article>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
+
+<head> </head>
