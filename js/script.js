@@ -25,8 +25,9 @@ formulario.addEventListener("submit", (event) => {
   let contactos = document.getElementById("contactos");
   array.forEach((item) => {
     contactos.innerHTML += `<div class="texto">
-              <p>${item}</p><button>Eliminar</button>
+              <p>${item}</p><button type="click" id="singleDel${i}">Eliminar</button>
           </div>`;
+          i++;
   });
 });
 
@@ -38,7 +39,9 @@ formulario.addEventListener("submit", (event) => {
 //   archive[keys[i]] = localStorage.getItem(keys[i]);
 // }
 
-//BORRAR TODOS
+//BORRAR Unico
+
+  //BORRAR TODOS
 document
   .querySelector("form")
   .addEventListener("reset", () => localStorage.clear());
