@@ -2,19 +2,19 @@ let formulario = document.querySelector("form");
 let i = 0;
 
 function mostrarDatos() {
+  
   let personas = localStorage.getItem("persona") || "[]";
   /* if (!Array.isArray(persona)) {
     persona = []; // Si no es un array, inicialízalo como un array vacío
   }*/
   let array = personas.split("},{").map(String);
   let contactos = document.getElementById("contactos");
+  contactos.innerHTML = ""
   return array.forEach((item) => {
     contactos.innerHTML += `<div class="texto">
               <p>${item.replaceAll(`","`, " ").replaceAll(`[{`, "").replaceAll("}]" , "").replaceAll(`"`, "")}</p>
           </div>`;
-
     i++;
-    
   });
 }
 
@@ -50,8 +50,12 @@ formulario.addEventListener("submit", (event) => {
 
 document.getElementById('botonBorrar').addEventListener('click', function() {
   borrarContacto(parseInt(prompt("Introduce el indice de la fila a borrar, comenzado por el 0"))); 
+  mostrarDatos();
 });
 //BORRAR TODOS
 document
   .querySelector("form")
-  .addEventListener("reset", () => localStorage.clear() && mostrarDatos());
+  .addEventListener("reset", () => {
+    localStorage.clear()
+    mostrarDatos()
+  } );
