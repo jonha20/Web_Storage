@@ -37,7 +37,7 @@
     .botones{
         margin-bottom: 10px;
     }
-    input[type="submit"] , a, input[type="reset"], input[type="reset"]{
+    input[type="submit"] , a, input[type="reset"], input[type="reset"], button[type="button"]{
         background: var(--color-secundario);
         color: var(--color-primario);
         border: none;
@@ -46,7 +46,7 @@
         cursor: pointer;
         text-decoration: none;
     }
-    input[type="submit"]:hover, a:hover, input[type="reset"]:hover, input[type="reset"]:hover {
+    input[type="submit"]:hover, a:hover, input[type="reset"]:hover, input[type="reset"]:hover , button[type="button"]:hover{
         background: var(--color-primario);
         color: var(--color-secundario);
         transition: 0.5s;
