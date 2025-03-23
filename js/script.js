@@ -10,8 +10,7 @@ formulario.addEventListener("submit", (event) => {
     mensaje: document.getElementById("message").value,
   };
   let usuarios = localStorage.getItem("persona") || "[]"; // Si no hay datos, usa '[]'
-  usuarios = JSON.parse(usuarios); // Convertir la cadena JSON en un array
-  // Agregar el nuevo objeto al array
+  usuarios = JSON.parse(usuarios);
   usuarios.push(formData);
 
   // Guardar el array actualizado en localStorage
@@ -21,27 +20,30 @@ formulario.addEventListener("submit", (event) => {
   /* if (!Array.isArray(personas)) {
     personas = []; // Si no es un array, inicialízalo como un array vacío
   }*/
+ document.querySelector("form").addEventListener("click", (element) => {
+  function borrarUno(element) {
+    const index = array.indexOf(element);
+    if (index > -1) {
+      // only splice array when item is found
+      array.splice(index, 1); // 2nd parameter means remove one item only
+    }
+  }
+  });
   let array = personas.split("},{").map(String);
   let contactos = document.getElementById("contactos");
   array.forEach((item) => {
     contactos.innerHTML += `<div class="texto">
               <p>${item}</p><button type="click" id="singleDel${i}">Eliminar</button>
           </div>`;
-          i++;
+
+    i++;
+    
   });
 });
 
-// let archive = [], // Notice change here
-//   keys = Object.keys(localStorage),
-//   i = keys.length;
-
-// while (i--) {
-//   archive[keys[i]] = localStorage.getItem(keys[i]);
-// }
-
 //BORRAR Unico
 
-  //BORRAR TODOS
+//BORRAR TODOS
 document
   .querySelector("form")
   .addEventListener("reset", () => localStorage.clear());
