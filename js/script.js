@@ -1,36 +1,27 @@
 let formulario = document.querySelector("form");
-let i = 0;
 
 function mostrarDatos() {
-  
-  let personas = localStorage.getItem("persona") || "[]";
-  /* if (!Array.isArray(persona)) {
-    persona = []; // Si no es un array, inicialízalo como un array vacío
-  }*/
-  let array = personas.split("},{").map(String);
+  let usuarioss = localStorage.getItem("usuarios") || "[]";
+  let array = usuarioss.split("},{").map(String);
   let contactos = document.getElementById("contactos");
   contactos.innerHTML = ""
   return array.forEach((item) => {
     contactos.innerHTML += `<div class="texto">
               <p>${item.replaceAll(`","`, " ").replaceAll(`[{`, "").replaceAll("}]" , "").replaceAll(`"`, "")}</p>
           </div>`;
-    i++;
   });
 }
 
 function enviarDatos(formData) {
-  let usuarios = localStorage.getItem("persona") || "[]"; // Si no hay datos, usa '[]'
+  let usuarios = localStorage.getItem("usuarios") || "[]"; 
   usuarios = JSON.parse(usuarios);
   usuarios.push(formData);
-
-  // Guardar el array actualizado en localStorage
-  return localStorage.setItem("persona", JSON.stringify(usuarios));
+  return localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
 function borrarContacto(index) {
-  let contactos = JSON.parse(localStorage.getItem('persona')) || [];
+  let contactos = JSON.parse(localStorage.getItem('usuarios')) || [];
   contactos.splice(index, 1);
-  localStorage.setItem('persona', JSON.stringify(contactos));
-  
+  localStorage.setItem('usuarios', JSON.stringify(contactos));
 }
 
 
